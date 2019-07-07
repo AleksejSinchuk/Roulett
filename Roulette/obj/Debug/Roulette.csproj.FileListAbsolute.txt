@@ -1,0 +1,17 @@
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\bin\Debug\Roulette.exe.config
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\bin\Debug\Roulette.exe
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\bin\Debug\Roulette.pdb
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette.csprojResolveAssemblyReference.cache
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\MainWindow.g.cs
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\App.g.cs
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette_MarkupCompile.cache
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette_MarkupCompile.lref
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\MainWindow.baml
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette.g.resources
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette.Properties.Resources.resources
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette.csproj.GenerateResource.Cache
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette.exe
+c:\users\32174\documents\visual studio 2015\Projects\Roulette\Roulette\obj\Debug\Roulette.pdb
+C:\Users\32174\Desktop\Roulette\Roulette\bin\Debug\Roulette.exe.config
+C:\Users\32174\Desktop\Roulette\Roulette\obj\Debug\Roulette.exe
+C:\Users\32174\Desktop\Roulette\Roulette\obj\Debug\Roulette.pdb
