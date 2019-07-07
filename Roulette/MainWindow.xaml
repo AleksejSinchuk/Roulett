@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Roulette"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1200">
-    <Grid ShowGridLines="False">
+    <Grid>
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition Width="3*"/>
@@ -18,6 +18,21 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding BetListItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Width="Auto">
+                        <Label Content="{Binding BET}"/>
+                        <Label Content="{Binding X}" />
+                        <Label Content="{Binding Numbers}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
         <Grid Grid.Row="0" Grid.Column="0" Background="Blue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
@@ -78,7 +93,7 @@
                 <Button Grid.Row="2" Background="Blue" Content="2к1" FontSize="20" Foreground="White" />
             </Grid>
 
-            <Button Grid.Column="0" Background="Blue" Content="0" FontSize="20" Foreground="White" />
+            <Button Grid.Column="0" Background="Blue" Content="0" FontSize="20" Foreground="White" Command="{Binding bet_0}"/>
 
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -287,53 +302,53 @@
 
                 <!--____________________________________________________________________________________________-->
 
-                <Button Grid.Column="1" Grid.Row="1" Background="Red" Foreground="White" Content="3" FontSize="20"/>
-                <Button Grid.Column="1" Grid.Row="3" Background="Black" Foreground="White"  Content="2" FontSize="20"/>
-                <Button Grid.Column="1" Grid.Row="5" Background="Red" Foreground="White"  Content="1" FontSize="20"/>
+                <Button Grid.Column="1" Grid.Row="1" Background="Red" Foreground="White" Content="3" FontSize="20" Command="{Binding bet_3}"/>
+                <Button Grid.Column="1" Grid.Row="3" Background="Black" Foreground="White"  Content="2" FontSize="20" Command="{Binding bet_2}"/>
+                <Button Grid.Column="1" Grid.Row="5" Background="Red" Foreground="White"  Content="1" FontSize="20" Command="{Binding bet_1}"/>
 
-                <Button Grid.Column="3" Grid.Row="1" Background="Black" Foreground="White"  Content="6" FontSize="20"/>
-                <Button Grid.Column="3" Grid.Row="3" Background="Red" Foreground="White" Content="5" FontSize="20"/>
-                <Button Grid.Column="3" Grid.Row="5" Background="Black" Foreground="White" Content="4" FontSize="20"/>
+                <Button Grid.Column="3" Grid.Row="1" Background="Black" Foreground="White"  Content="6" FontSize="20" Command="{Binding bet_6}"/>
+                <Button Grid.Column="3" Grid.Row="3" Background="Red" Foreground="White" Content="5" FontSize="20" Command="{Binding bet_5}"/>
+                <Button Grid.Column="3" Grid.Row="5" Background="Black" Foreground="White" Content="4" FontSize="20" Command="{Binding bet_4}"/>
 
-                <Button Grid.Column="5" Grid.Row="1" Background="Red" Foreground="White" Content="9" FontSize="20"/>
-                <Button Grid.Column="5" Grid.Row="3" Background="Black" Foreground="White" Content="8" FontSize="20"/>
-                <Button Grid.Column="5" Grid.Row="5" Background="Red" Foreground="White" Content="7" FontSize="20"/>
+                <Button Grid.Column="5" Grid.Row="1" Background="Red" Foreground="White" Content="9" FontSize="20" Command="{Binding bet_9}"/>
+                <Button Grid.Column="5" Grid.Row="3" Background="Black" Foreground="White" Content="8" FontSize="20" Command="{Binding bet_8}"/>
+                <Button Grid.Column="5" Grid.Row="5" Background="Red" Foreground="White" Content="7" FontSize="20" Command="{Binding bet_7}"/>
 
-                <Button Grid.Column="7" Grid.Row="1" Background="Red" Foreground="White" Content="12" FontSize="20"/>
-                <Button Grid.Column="7" Grid.Row="3" Background="Black" Foreground="White" Content="11" FontSize="20"/>
-                <Button Grid.Column="7" Grid.Row="5" Background="Black" Foreground="White" Content="10" FontSize="20"/>
+                <Button Grid.Column="7" Grid.Row="1" Background="Red" Foreground="White" Content="12" FontSize="20" Command="{Binding bet_10}"/>
+                <Button Grid.Column="7" Grid.Row="3" Background="Black" Foreground="White" Content="11" FontSize="20" Command="{Binding bet_11}"/>
+                <Button Grid.Column="7" Grid.Row="5" Background="Black" Foreground="White" Content="10" FontSize="20" Command="{Binding bet_10}"/>
 
-                <Button Grid.Column="9" Grid.Row="1" Background="Black" Foreground="White" Content="15" FontSize="20"/>
-                <Button Grid.Column="9" Grid.Row="3" Background="Red" Foreground="White" Content="14" FontSize="20"/>
-                <Button Grid.Column="9" Grid.Row="5" Background="Black" Foreground="White" Content="13" FontSize="20"/>
+                <Button Grid.Column="9" Grid.Row="1" Background="Black" Foreground="White" Content="15" FontSize="20" Command="{Binding bet_15}"/>
+                <Button Grid.Column="9" Grid.Row="3" Background="Red" Foreground="White" Content="14" FontSize="20" Command="{Binding bet_14}"/>
+                <Button Grid.Column="9" Grid.Row="5" Background="Black" Foreground="White" Content="13" FontSize="20" Command="{Binding bet_13}"/>
 
-                <Button Grid.Column="11" Grid.Row="1" Background="Red" Foreground="White" Content="18" FontSize="20"/>
-                <Button Grid.Column="11" Grid.Row="3" Background="Black" Foreground="White" Content="17" FontSize="20"/>
-                <Button Grid.Column="11" Grid.Row="5" Background="Red" Foreground="White" Content="16" FontSize="20"/>
+                <Button Grid.Column="11" Grid.Row="1" Background="Red" Foreground="White" Content="18" FontSize="20" Command="{Binding bet_18}"/>
+                <Button Grid.Column="11" Grid.Row="3" Background="Black" Foreground="White" Content="17" FontSize="20" Command="{Binding bet_17}"/>
+                <Button Grid.Column="11" Grid.Row="5" Background="Red" Foreground="White" Content="16" FontSize="20" Command="{Binding bet_16}"/>
 
-                <Button Grid.Column="13" Grid.Row="1" Background="Red" Foreground="White" Content="21" FontSize="20"/>
-                <Button Grid.Column="13" Grid.Row="3" Background="Black" Foreground="White" Content="20" FontSize="20"/>
-                <Button Grid.Column="13" Grid.Row="5" Background="Red" Foreground="White" Content="19" FontSize="20"/>
+                <Button Grid.Column="13" Grid.Row="1" Background="Red" Foreground="White" Content="21" FontSize="20" Command="{Binding bet_21}"/>
+                <Button Grid.Column="13" Grid.Row="3" Background="Black" Foreground="White" Content="20" FontSize="20" Command="{Binding bet_20}"/>
+                <Button Grid.Column="13" Grid.Row="5" Background="Red" Foreground="White" Content="19" FontSize="20" Command="{Binding bet_19}"/>
 
-                <Button Grid.Column="15" Grid.Row="1" Background="Black" Foreground="White" Content="24" FontSize="20"/>
-                <Button Grid.Column="15" Grid.Row="3" Background="Red" Foreground="White" Content="23" FontSize="20"/>
-                <Button Grid.Column="15" Grid.Row="5" Background="Black" Foreground="White" Content="22" FontSize="20"/>
+                <Button Grid.Column="15" Grid.Row="1" Background="Black" Foreground="White" Content="24" FontSize="20" Command="{Binding bet_24}"/>
+                <Button Grid.Column="15" Grid.Row="3" Background="Red" Foreground="White" Content="23" FontSize="20" Command="{Binding bet_23}"/>
+                <Button Grid.Column="15" Grid.Row="5" Background="Black" Foreground="White" Content="22" FontSize="20" Command="{Binding bet_22}"/>
 
-                <Button Grid.Column="17" Grid.Row="1" Background="Red" Foreground="White" Content="27" FontSize="20"/>
-                <Button Grid.Column="17" Grid.Row="3" Background="Black" Foreground="White" Content="26" FontSize="20"/>
-                <Button Grid.Column="17" Grid.Row="5" Background="Red" Foreground="White" Content="25" FontSize="20"/>
+                <Button Grid.Column="17" Grid.Row="1" Background="Red" Foreground="White" Content="27" FontSize="20" Command="{Binding bet_27}"/>
+                <Button Grid.Column="17" Grid.Row="3" Background="Black" Foreground="White" Content="26" FontSize="20" Command="{Binding bet_26}"/>
+                <Button Grid.Column="17" Grid.Row="5" Background="Red" Foreground="White" Content="25" FontSize="20" Command="{Binding bet_25}"/>
 
-                <Button Grid.Column="19" Grid.Row="1" Background="Red" Foreground="White" Content="30" FontSize="20"/>
-                <Button Grid.Column="19" Grid.Row="3" Background="Black" Foreground="White" Content="29" FontSize="20"/>
-                <Button Grid.Column="19" Grid.Row="5" Background="Black" Foreground="White" Content="28" FontSize="20"/>
+                <Button Grid.Column="19" Grid.Row="1" Background="Red" Foreground="White" Content="30" FontSize="20" Command="{Binding bet_30}"/>
+                <Button Grid.Column="19" Grid.Row="3" Background="Black" Foreground="White" Content="29" FontSize="20" Command="{Binding bet_29}"/>
+                <Button Grid.Column="19" Grid.Row="5" Background="Black" Foreground="White" Content="28" FontSize="20" Command="{Binding bet_28}"/>
 
-                <Button Grid.Column="21" Grid.Row="1" Background="Black" Foreground="White" Content="33" FontSize="20"/>
-                <Button Grid.Column="21" Grid.Row="3" Background="Red" Foreground="White" Content="32" FontSize="20"/>
-                <Button Grid.Column="21" Grid.Row="5" Background="Black" Foreground="White" Content="31" FontSize="20"/>
+                <Button Grid.Column="21" Grid.Row="1" Background="Black" Foreground="White" Content="33" FontSize="20" Command="{Binding bet_33}"/>
+                <Button Grid.Column="21" Grid.Row="3" Background="Red" Foreground="White" Content="32" FontSize="20" Command="{Binding bet_32}"/>
+                <Button Grid.Column="21" Grid.Row="5" Background="Black" Foreground="White" Content="31" FontSize="20" Command="{Binding bet_31}"/>
 
-                <Button Grid.Column="23" Grid.Row="1" Background="Red" Foreground="White" Content="36" FontSize="20"/>
-                <Button Grid.Column="23" Grid.Row="3" Background="Black" Foreground="White" Content="35" FontSize="20"/>
-                <Button Grid.Column="23" Grid.Row="5" Background="Red" Foreground="White" Content="34" FontSize="20"/>
+                <Button Grid.Column="23" Grid.Row="1" Background="Red" Foreground="White" Content="36" FontSize="20" Command="{Binding bet_36}"/>
+                <Button Grid.Column="23" Grid.Row="3" Background="Black" Foreground="White" Content="35" FontSize="20" Command="{Binding bet_35}"/>
+                <Button Grid.Column="23" Grid.Row="5" Background="Red" Foreground="White" Content="34" FontSize="20" Command="{Binding bet_34}"/>
 
             </Grid>
 
