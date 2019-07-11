@@ -18,11 +18,33 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        
+        
+        <TextBox Grid.Column="1" Grid.Row="0" Text="12345" FontSize="25" TextAlignment="Center" Padding="35"/>
+
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="YOUR SCHOR" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                <Label Grid.Row="1" Content="1000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                
+            </Grid>
+            <Button Grid.Column="1" Content="START" FontSize="20"/>
+        </Grid>
+
 
         <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding BetListItems}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Width="Auto">
+                    <StackPanel Orientation="Horizontal" Width="Auto">
                         <Label Content="{Binding BET}"/>
                         <Label Content="{Binding X}" />
                         <Label Content="{Binding Numbers}" />

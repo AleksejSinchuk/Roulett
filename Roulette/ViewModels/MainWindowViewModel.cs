@@ -51,7 +51,12 @@ namespace Roulette.ViewModels
 
         public MainWindowViewModel()
         {
-           
+            BetListItems = new ObservableCollection<BetItemsViewModel>();
+            BetListItems.Add(new BetItemsViewModel { BET = "500", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
+            BetListItems.Add(new BetItemsViewModel { BET = "100", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
+            BetListItems.Add(new BetItemsViewModel { BET = "200", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
+            BetListItems.Add(new BetItemsViewModel { BET = "50", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
+            BetListItems.Add(new BetItemsViewModel { BET = "5", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
         }
 
         void Comands()
