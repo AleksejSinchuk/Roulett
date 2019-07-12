@@ -4,13 +4,20 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Roulette.ViewModels
 {
     class MainWindowViewModel :Bace.ViewModel
     {
+        
         public ObservableCollection <BetItemsViewModel> BetListItems { get; set; }
 
+        public string TextKolBet { get; set; } = "0";
+
+        
+
+        #region Command bet_*
         public Command bet_0 { set; get; }
         public Command bet_1 { set; get; }
         public Command bet_2 { set; get; }
@@ -47,7 +54,7 @@ namespace Roulette.ViewModels
         public Command bet_34 { set; get; }
         public Command bet_35 { set; get; }
         public Command bet_36 { set; get; }
-
+        #endregion
 
         public MainWindowViewModel()
         {
@@ -57,14 +64,18 @@ namespace Roulette.ViewModels
             BetListItems.Add(new BetItemsViewModel { BET = "200", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
             BetListItems.Add(new BetItemsViewModel { BET = "50", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
             BetListItems.Add(new BetItemsViewModel { BET = "5", X = "1.5", Numbers = "1,2,3,4,5,6,7" });
+            bet_0 = new Command(()=>
+            {
+                
+               
+                BetListItems.Add(new BetItemsViewModel { BET = TextKolBet, X = "1.5", Numbers = "0" });
+                TextKolBet = "0";
+                OnPropertyChanged(nameof(TextKolBet));
+            });
+       
         }
 
-        void Comands()
-        {
-            bet_0 = new Command(
-                () =>{
-              });
-        }
+       
 
     }
 }
