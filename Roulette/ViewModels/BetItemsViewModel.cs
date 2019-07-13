@@ -8,8 +8,8 @@ namespace Roulette.ViewModels
 {
      public class BetItemsViewModel : Bace.ViewModel
     {
-        public string BET { set; get; }
-        public string X { set; get; }
+        public double BET { set; get; }
+        public double X { set; get; }
         public string Numbers { set; get; }
         public BetItemsViewModel()
         {
