@@ -37,7 +37,7 @@
                 <Label Grid.Row="1" Content="{Binding Score}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
                 
             </Grid>
-            <Button Grid.Column="1" Content="START" FontSize="20" Background="White"/>
+            <Button Grid.Column="1" Content="START" FontSize="20" Background="White" Command="{Binding btnStart}"/>
         </Grid>
 
 

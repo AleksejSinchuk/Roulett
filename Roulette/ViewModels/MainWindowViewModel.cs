@@ -18,6 +18,9 @@ namespace Roulette.ViewModels
         public double Score { get; set; } = 10000;
         public string Rnd { set; get; }
 
+
+        public Command btnStart { set; get;}
+
         #region Command bet_*
         public Command bet_0 { set; get; }
         public Command bet_1 { set; get; }
@@ -104,8 +107,11 @@ namespace Roulette.ViewModels
             BetListItems = new ObservableCollection<BetItemsViewModel>();
 
             Bets();
-            Bets_Play(BetListItems);
+            btnStart = new Command(() => {
+                Bets_Play(BetListItems);
+            });
 
+           
 
         }
 
@@ -293,7 +299,7 @@ namespace Roulette.ViewModels
             });
             bet_13_24 = new Command(() =>
             {
-                InBet(",13,14,15,16,17,18,19,20,21,22,23,24", 3);
+                InBet("13,14,15,16,17,18,19,20,21,22,23,24", 3);
             });
             bet_25_36 = new Command(() =>
             {
@@ -433,12 +439,22 @@ namespace Roulette.ViewModels
             Random rnd = new Random();
           
             Rnd = Convert.ToString( rnd.Next(36)); 
-            OnPropertyChanged(nameof(Rnd));
+           
             for(int i = 0; i < List.Count; i++)
             {
               int[] Nmbrs =  List[i].Numbers.Split(',').Select(s => Convert.ToInt32(s)).ToArray();
-                
+                for(int j = 0; j < Nmbrs.Length; j++)
+                {
+                    if (Nmbrs[j] == Convert.ToInt32(Rnd))
+                    {
+                        Score += (List[i].BET * List[i].X);
+                    }
+                }
             }
+            OnPropertyChanged(nameof(Rnd));
+            OnPropertyChanged(nameof(Score));
+            BetListItems.Clear();
+            OnPropertyChanged(nameof(TextKolBet)); 
         }
 
        
